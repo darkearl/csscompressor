@@ -1,1 +1,76 @@
-Hello World
+<html dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width,initial-scale=1,maximum-scale=1" name="viewport">
+	<meta content="online css compressor,online css beautifier,online css decompressor" name="keywords">
+	<meta content="Lightweight CSS tool for quick time editing" name="description">
+	<title>Nén CSS code &amp; Làm đẹp Css Code</title>
+	<link href="img/favicon.ico" rel="shortcut icon">
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+</head>
+<body cz-shortcut-listen="true">
+	<div id="page-wrap">
+		<div class="addthis_toolbox addthis_default_style right">
+			<a class="addthis_counter addthis_pill_style"></a>
+		</div>
+		<h2>Nén hoặc làm đẹp CSS Code:</h2>
+		<div class="clear"></div>
+		<div class="col left">
+			<span class="right">
+				<input type="checkbox" id="highlightCode" checked=""> <label for="highlightCode">Hiển thị mã nhấn mạnh ?</label> 
+				<button onclick="clearField(&quot;cssField&quot;);">Xóa Hết</button> <button onclick="selectAll(&quot;cssField&quot;);">Chọn Tất Cả</button>
+			</span>
+			<span class="clear"></span>
+			<textarea spellcheck="false" id="cssField" placeholder="Paste your CSS code here..." autofocus=""></textarea>
+		</div>
+		<div class="col right">
+			<div class="button-group">
+				<div class="box">
+					<p>
+						<input type="checkbox" id="stripAllComment"> <label for="stripAllComment">Gỡ bỏ tất cả chú thích</label>
+					</p>
+					<p>
+						<input type="checkbox" id="superCompact"> <label for="superCompact">Nén siêu gọn</label>
+					</p>
+					<p>
+						<input type="checkbox" id="betterIndentation"> <label for="betterIndentation">Giữ thụt đầu dòng trong <code>@query {}</code></label>
+					</p>
+					<p>
+						<input type="checkbox" id="keepLastComma" checked=""> <label for="keepLastComma">Loại bỏ các dấu chấm phẩy cuối cùng</label>
+					</p>
+				</div>
+				<button onclick="compressCSS(&quot;cssField&quot;);">Nén CSS</button>
+			</div>
+			<div class="button-group">
+				<div class="box">
+					<p>
+						<input type="checkbox" id="inlineLayout" onchange="beautifyCSS(&quot;cssField&quot;);"> <label for="inlineLayout">Hình thức bố cục nội dòng</label>
+					</p>
+					<p>
+						<input type="checkbox" onchange="beautifyCSS(&quot;cssField&quot;);" id="toTab"> <label for="toTab">Replace double space indentation with:</label><br> &nbsp;<span id="tabOpt"><input type="radio" name="op" id="op-1" onchange="beautifyCSS(&quot;cssField&quot;);"> <label for="op-1">Một Tab</label> <input type="radio" name="op" id="op-2" onchange="beautifyCSS(&quot;cssField&quot;);"> <label for="op-2">4 dấu cách</label></span>
+					</p>
+					<p>
+						<input type="checkbox" onchange="beautifyCSS(&quot;cssField&quot;);" id="breakSelector" checked=""> <label for="breakSelector">Chia đa bộ chọn (e.g: <code>html,<span style="color:darkred;">\n</span>body,<span style="color:darkred;">\n</span>table {}</code>)</label>
+					</p>
+					<p>
+						<input type="checkbox" onchange="beautifyCSS(&quot;cssField&quot;);" id="spaceBetween"> <label for="spaceBetween">Space after <code>:</code> and <code>,</code></label>
+					</p>
+					<p>
+						<input type="checkbox" onchange="beautifyCSS(&quot;cssField&quot;);" id="inlineSingleProp"> <label for="inlineSingleProp">Inline bracket for single property</label>
+					</p>
+					<p>
+						<input type="checkbox" onchange="beautifyCSS(&quot;cssField&quot;);" id="removeLastSemicolon"> <label for="removeLastSemicolon">Remove the last semicolon in single property</label>
+					</p>
+					<p>
+						<input type="checkbox" onchange="beautifyCSS(&quot;cssField&quot;);" id="singleBreak"> <label for="singleBreak">Compact line break</label>
+					</p>
+				</div>
+				<button onclick="beautifyCSS(&quot;cssField&quot;);">Làm đẹp CSS code</button>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<h2 class="hidden" style="display: block;">Highlighted Code:</h2>
+		<pre id="highlightedResult" style="display: block;"><code></code></pre>
+	</div>
+	<script type="text/javascript" src="js/function.js"></script>
+</body></html>
